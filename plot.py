@@ -25,16 +25,16 @@ nx=400, ny=200)
 
 # Plot data in each projection
 for name in sorted(projections):
-fig = plt.figure()
-fig.suptitle('ORCA2 Data Projected to {}'.format(name))
-# Set up axes and title
-ax = plt.subplot(projection=projections[name])
-# Set limits
-ax.set_global()
-# plot with Iris quickplot pcolormesh
-qplt.pcolormesh(new_cube)
-# Draw coastlines
-ax.coastlines()
+    fig = plt.figure()
+    fig.suptitle('ORCA2 Data Projected to {}'.format(name))
+    # Set up axes and title
+    ax = plt.subplot(projection=projections[name])
+    # Set limits
+    ax.set_global()
+    # plot with Iris quickplot pcolormesh
+    qplt.pcolormesh(new_cube)
+    # Draw coastlines
+    ax.coastlines()
 
-iplt.show()
+    iplt.show()
 
