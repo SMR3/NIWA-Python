@@ -6,7 +6,7 @@ import iris.plot as iplt
 import iris.quickplot as qplt
 
 # Load data
-filepath = INSERT FILE PATH HERE 
+filepath = INSERT YOUR FILE PATH HERE 
 cube = iris.load_cube(filepath)
 
 # Choose plot projections
