@@ -1,5 +1,3 @@
-# Comment
-
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import iris
