@@ -25,7 +25,7 @@ nx=400, ny=200)
 # Plot data in each projection
 for name in sorted(projections):
     fig = plt.figure()
-    fig.suptitle('ORCA2 Data Projected to {}'.format(name))
+    fig.suptitle('NZESM val tool output')
     # Set up axes and title
     ax = plt.subplot(projection=projections[name])
     # Set limits
