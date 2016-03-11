@@ -3,12 +3,16 @@ import matplotlib.pyplot as plt
 import iris
 import iris.plot as iplt
 import iris.quickplot as qplt
+import numpy as np
 
 fig = plt.figure()
 
+dirnames=np.array(['u-ab642','16x16_niwa_update'])
+fnames=np.array(['ab642','16x16'])
+
 for i in range(0,2):
 
-    fname = '/home/williamsjh/cylc-run/u-ab642/share/data/History_Data/ab642a.pd1981sep'
+    fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[i]+'a.pd1981sep'
 
     cube_all = iris.load(fname, 'specific_humidity')
 
