@@ -15,17 +15,22 @@ fig = plt.figure()
 dirnames=np.array(['u-ab642','16x16_niwa_update'])
 fnames=np.array(['ab642','16x16'])
 
-for i in range(0,2):
+varnames=np.array(['surface_downwelling_shortwave_flux_in_air_assuming_clear_sky',\
+'surface_net_downward_shortwave_flux',\
+'surface_upwelling_shortwave_flux_in_air_assuming_clear_sky'\
+])
 
-    fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[i]+'a.pd1981sep'
+for i in range(0,3):
 
-    cube_all = iris.load(fname, 'surface_net_downward_shortwave_flux')
+    fname = '/home/williamsjh/cylc-run/'+dirnames[0]+'/share/data/History_Data/'+fnames[0]+'a.pd1981sep'
+
+    cube_all = iris.load(fname, varnames[i])
     
     print(cube_all)
     
-    pause()
-    
-    
+#    pause()
+#    
+#    
     cube=cube_all[0]
 #    print(cube)
 #    print('All times :\n') 
@@ -40,7 +45,7 @@ for i in range(0,2):
     
     print(i+1)
 
-    plt.subplot(1,2,i+1)
+    plt.subplot(1,3,i+1)
     qplt.pcolor(cube_1, cmap='RdBu')
     plt.gca().coastlines()
 
