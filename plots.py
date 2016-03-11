@@ -15,8 +15,9 @@ fig = plt.figure()
 dirnames=np.array(['u-ab642','16x16_niwa_update'])
 fnames=np.array(['ab642','16x16'])
 
-varnames=np.array(['surface_downwelling_shortwave_flux_in_air_assuming_clear_sky',\
+varnames=np.array([\
 'surface_net_downward_shortwave_flux',\
+'surface_downwelling_shortwave_flux_in_air_assuming_clear_sky',\
 'surface_upwelling_shortwave_flux_in_air_assuming_clear_sky'\
 ])
 
@@ -47,7 +48,7 @@ for i in range(0,3):
 
     plt.subplot(1,3,i+1)
     qplt.pcolor(cube_1, cmap='RdBu')
-    plt.title('')
+    plt.title('' )
     plt.gca().coastlines()
 
 iplt.show()
