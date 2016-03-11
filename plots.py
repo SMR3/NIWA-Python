@@ -1,3 +1,8 @@
+import os
+
+def pause():
+    programPause = raw_input("Press the <ENTER> key to continue...")
+
 import cartopy.crs as ccrs
 import matplotlib.pyplot as plt
 import iris
@@ -14,8 +19,13 @@ for i in range(0,2):
 
     fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[i]+'a.pd1981sep'
 
-    cube_all = iris.load(fname, 'specific_humidity')
-
+    cube_all = iris.load(fname, 'surface_net_downward_shortwave_flux')
+    
+    print(cube_all)
+    
+    pause()
+    
+    
     cube=cube_all[0]
 #    print(cube)
 #    print('All times :\n') 
