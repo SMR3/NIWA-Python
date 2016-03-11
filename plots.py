@@ -21,7 +21,7 @@ varnames=np.array([\
 'surface_upwelling_shortwave_flux_in_air_assuming_clear_sky'\
 ])
 
-for i in range(0,3):
+for i in range(0,len(varnames)):
 
     fname = '/home/williamsjh/cylc-run/'+dirnames[0]+'/share/data/History_Data/'+fnames[0]+'a.pd1981sep'
 
