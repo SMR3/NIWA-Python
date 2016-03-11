@@ -22,8 +22,10 @@ for i in range(0,2):
 
     print(cube_1)
 
+j=1
+
 fig = plt.figure()
-plt.subplot(121)
+plt.subplot(1,2,j)
 qplt.pcolor(cube_1, cmap='RdBu')
 plt.gca().coastlines()
 # plt.subplot(122)
