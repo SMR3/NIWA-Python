@@ -47,6 +47,7 @@ for i in range(0,3):
 
     plt.subplot(1,3,i+1)
     qplt.pcolor(cube_1, cmap='RdBu')
+    plt.title('')
     plt.gca().coastlines()
 
 iplt.show()
