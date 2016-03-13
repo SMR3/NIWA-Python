@@ -19,6 +19,7 @@ varnames=np.array([\
 'surface_net_downward_shortwave_flux',\
 'surface_downwelling_shortwave_flux_in_air_assuming_clear_sky',\
 'surface_upwelling_shortwave_flux_in_air_assuming_clear_sky'\
+'surface_downwelling_shortwave_flux_in_air'\
 ])
 
 for i in range(0,len(varnames)):
