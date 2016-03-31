@@ -17,5 +17,7 @@ ypd=1./n96/360.*(24.*60.*60.)
 print(ypd)
 
 plt.plot(processor_decomposition,ypd,'-o')
-
+plt.xlabel('number of processors')
+plt.ylabel('years $\cdot$ day $^{-1}$')
+plt.grid(True)
 plt.show()
