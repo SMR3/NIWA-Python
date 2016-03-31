@@ -13,6 +13,7 @@ print(n96)
 #'n96' is the number of seconds taken to run one day of simulation. We need to convert this to years of simulation per wallclock day.
 
 ypd=(np.divide(np.divide(1.,n96),360./(24*60*60)))
+ypd=1./n96/360.*(24.*60.*60.)
 
 print(ypd)
 
