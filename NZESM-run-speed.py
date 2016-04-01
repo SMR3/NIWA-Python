@@ -10,6 +10,8 @@ n96=np.array([(36.*60.+59.)-(29.*60.+43.),(21.*60.+24.)-(17.*60.+1.),(28.*60.+37
 
 n96-chem=np.array([(.*60.+.)-(.*60.+.),(.*60.+.)-(.*60.+.),(.*60.+.)-(.*60.+.)])
 
+n216=np.array([(.*60.+.)-(.*60.+.),(.*60.+.)-(.*60.+.),(.*60.+.)-(.*60.+.)])
+
 print(n96)
 
 #'n96' is the number of seconds taken to run one day of simulation. We need to convert this to years of simulation per wallclock day.
