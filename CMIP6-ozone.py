@@ -4,6 +4,32 @@ import matplotlib.pyplot as plt
 import numpy as np
 import iris
 
-cubes=iris.load('/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/*anwwa*jan*.pp')
+all_data_jan=iris.load_cube('/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/*anwwa*jan*.pp')
+all_data_feb=iris.load_cube('/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/*anwwa*feb*.pp')
+all_data_mar=iris.load_cube('/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/*anwwa*mar*.pp')
+all_data_apr=iris.load_cube('/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/*anwwa*apr*.pp')
+all_data_may=iris.load_cube('/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/*anwwa*may*.pp')
+all_data_jun=iris.load_cube('/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/*anwwa*jun*.pp')
+all_data_jul=iris.load_cube('/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/*anwwa*jul*.pp')
+all_data_aug=iris.load_cube('/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/*anwwa*aug*.pp')
+all_data_sep=iris.load_cube('/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/*anwwa*sep*.pp')
+all_data_oct=iris.load_cube('/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/*anwwa*oct*.pp')
+all_data_nov=iris.load_cube('/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/*anwwa*nov*.pp')
+all_data_dec=iris.load_cube('/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/*anwwa*dec*.pp')
+
+time_mean_jan=all_data_jan.collapsed('time',iris.analysis.MEAN)
+time_mean_feb=all_data_feb.collapsed('time',iris.analysis.MEAN)
+time_mean_mar=all_data_mar.collapsed('time',iris.analysis.MEAN)
+time_mean_apr=all_data_apr.collapsed('time',iris.analysis.MEAN)
+time_mean_may=all_data_may.collapsed('time',iris.analysis.MEAN)
+time_mean_jun=all_data_jun.collapsed('time',iris.analysis.MEAN)
+time_mean_jul=all_data_jul.collapsed('time',iris.analysis.MEAN)
+time_mean_aug=all_data_aug.collapsed('time',iris.analysis.MEAN)
+time_mean_sep=all_data_sep.collapsed('time',iris.analysis.MEAN)
+time_mean_oct=all_data_oct.collapsed('time',iris.analysis.MEAN)
+time_mean_nov=all_data_nov.collapsed('time',iris.analysis.MEAN)
+time_mean_dec=all_data_dec.collapsed('time',iris.analysis.MEAN)
+
+iris.save(time_mean,'./anwwa_time_mean_jan.pp')
 
 
