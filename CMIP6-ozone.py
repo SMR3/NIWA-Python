@@ -30,6 +30,7 @@ time_mean_oct=all_data_oct.collapsed('time',iris.analysis.MEAN)
 time_mean_nov=all_data_nov.collapsed('time',iris.analysis.MEAN)
 time_mean_dec=all_data_dec.collapsed('time',iris.analysis.MEAN)
 
-iris.save(time_mean,'./anwwa_time_mean_jan.pp')
+iris.save(time_mean_jan,'/home/williamsjh/CMIP6-ozone-forcing/NIWA-processed/anwwa_time_mean_jan.pp')
+
 
 
