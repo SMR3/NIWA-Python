@@ -31,6 +31,17 @@ time_mean_nov=all_data_nov.collapsed('time',iris.analysis.MEAN)
 time_mean_dec=all_data_dec.collapsed('time',iris.analysis.MEAN)
 
 iris.save(time_mean_jan,'/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/NIWA-processed/anwwa_time_mean_jan.pp')
+iris.save(time_mean_jan,'/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/NIWA-processed/anwwa_time_mean_feb.pp')
+iris.save(time_mean_jan,'/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/NIWA-processed/anwwa_time_mean_mar.pp')
+iris.save(time_mean_jan,'/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/NIWA-processed/anwwa_time_mean_apr.pp')
+iris.save(time_mean_jan,'/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/NIWA-processed/anwwa_time_mean_may.pp')
+iris.save(time_mean_jan,'/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/NIWA-processed/anwwa_time_mean_jun.pp')
+iris.save(time_mean_jan,'/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/NIWA-processed/anwwa_time_mean_jul.pp')
+iris.save(time_mean_jan,'/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/NIWA-processed/anwwa_time_mean_aug.pp')
+iris.save(time_mean_jan,'/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/NIWA-processed/anwwa_time_mean_sep.pp')
+iris.save(time_mean_jan,'/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/NIWA-processed/anwwa_time_mean_oct.pp')
+iris.save(time_mean_jan,'/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/NIWA-processed/anwwa_time_mean_nov.pp')
+iris.save(time_mean_jan,'/home/williamsjh/CMIP6-ozone-forcing/data-retrieval/NIWA-processed/anwwa_time_mean_dec.pp')
 
 
 
