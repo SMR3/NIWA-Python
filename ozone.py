@@ -27,7 +27,7 @@ for i in range(0,len(dirnames)):
     cube=cube_all[0] 
     
     plt.subplot(1,2,i+1)
-    qplt.pcolormesh(cube, cmap='RdBu_r')
+    qplt.pcolormesh(cube, cmap='RdBu_r',vmin=250,vmax=310)
     plt.title('' )
     plt.gca().coastlines()
 
