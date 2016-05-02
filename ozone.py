@@ -12,7 +12,7 @@ import numpy as np
 
 fig = plt.figure()
 
-dirnames=np.array(['u-ab642','niwa_update_NIWA-UKCA_refC1_2001-2010_zm'])
+dirnames=np.array(['u-ab642','niwa_update_NIWA-UKCA_refC1_2001-2010_zm','niwa_update_NIWA-UKCA_refC1_2001-2010'])
 fnames=np.array(['ab642'])
 
 varnames=np.array([\
@@ -26,7 +26,7 @@ for i in range(0,len(dirnames)):
     cube_all = iris.load(fname, varnames[0])
     cube=cube_all[0] 
     
-    plt.subplot(1,2,i+1)
+    plt.subplot(1,3,i+1)
     qplt.pcolormesh(cube, cmap='RdBu_r',vmin=250,vmax=310)
     plt.title(dirnames[i])
     plt.gca().coastlines()
