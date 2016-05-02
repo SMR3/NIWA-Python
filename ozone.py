@@ -24,30 +24,12 @@ for i in range(0,len(varnames)):
     fname = '/home/williamsjh/cylc-run/'+dirnames[0]+'/share/data/History_Data/'+fnames[0]+'a.ps1981son'
 
     cube_all = iris.load(fname, varnames[i])
-    cube=cube_all(0) 
-    print(cube_all)
+    cube=cube_all[0] 
     
-#    pause()
-#    
-#    
-#    cube=cube_all[0]
-#    print(cube)
-#    print('All times :\n') 
-#    print(cube.coord('time'))
+    plt.subplot(1,len(varnames),i+1)
+    qplt.pcolormesh(cube, cmap='RdBu_r')
+    plt.title('' )
+    plt.gca().coastlines()
 
-#    day_1 = iris.Constraint(time=lambda cell: cell.point.day == 1)
-
-#    with iris.FUTURE.context(cell_datetime_objects=True):
-#        cube_1 = cube.extract(day_1)
-
-#    print(cube_1)
-    
- #   print(i+1)
-#
-    #plt.subplot(1,len(varnames),i+1)
-   # qplt.pcolor(cube_all, cmap='RdBu')
-  #  plt.title('' )
- #   plt.gca().coastlines()
-
-#iplt.show()
+iplt.show()
 
