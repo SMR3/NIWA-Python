@@ -32,10 +32,11 @@ for i in range(0,len(dirnames)):
     else:
         plotthis = cube - cube_control
          
-    plt.subplot(2,3,i+1)
-    qplt.pcolormesh(plotthis, cmap='RdBu_r')
-    plt.title(dirnames[i])
-    plt.gca().coastlines()
+    if i > 0:
+        plt.subplot(2,2,i)
+        qplt.pcolormesh(plotthis, cmap='RdBu_r')
+        plt.title(dirnames[i])
+        plt.gca().coastlines()
 
 iplt.show()
 
