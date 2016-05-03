@@ -26,8 +26,8 @@ for i in range(0,len(dirnames)):
         vmax = 5
 
     plt.subplot(3,2,i + 1 + (i > 0))
-    qplt.contourf(plotthis, 20, cmap='RdBu_r', vmin=vmin, vmax=vmax)
-    plt.title(titles[i])
+    qplt.pcolormesh(plotthis, cmap='RdBu_r', vmin=vmin, vmax=vmax)
+    plt.title(titles[i], size='small')
     plt.gca().coastlines()
 
 iplt.show()
