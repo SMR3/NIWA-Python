@@ -25,9 +25,15 @@ for i in range(0,len(dirnames)):
 
     cube_all = iris.load(fname, varnames[0])
     cube=cube_all[0] 
-    
+   
+    if i == 0:
+        cube_control = cube
+        plotthis = cube
+    else:
+        plotthis = cube - cube_control
+         
     plt.subplot(1,3,i+1)
-    qplt.pcolormesh(cube, cmap='RdBu_r',vmin=250,vmax=310)
+    qplt.pcolormesh(plotthis, cmap='RdBu_r')
     plt.title(dirnames[i])
     plt.gca().coastlines()
 
