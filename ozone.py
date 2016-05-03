@@ -1,4 +1,4 @@
-fig = plt.figure(figsize=(12,12))
+fig = plt.figure(figsize=(10,10))
 
 dirnames = np.array(['u-ab642','niwa_update_NIWA-UKCA_refC1_2001-2010_zm','niwa_update_NIWA-UKCA_refC1_2001-2010','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010_zm','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010'])
 fnames = np.array(['ab642'])
