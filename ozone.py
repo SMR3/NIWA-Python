@@ -1,15 +1,3 @@
-import os
-
-def pause():
-    programPause = raw_input("Press the <ENTER> key to continue...")
-
-import cartopy.crs as ccrs
-import matplotlib.pyplot as plt
-import iris
-import iris.plot as iplt
-import iris.quickplot as qplt
-import numpy as np
-
 fig = plt.figure()
 
 dirnames=np.array(['u-ab642','niwa_update_NIWA-UKCA_refC1_2001-2010_zm','niwa_update_NIWA-UKCA_refC1_2001-2010','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010_zm','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010'])
