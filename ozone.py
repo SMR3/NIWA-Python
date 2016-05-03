@@ -1,7 +1,8 @@
-fig = plt.figure()
+fig = plt.figure(figsize=(12,12))
 
 dirnames = np.array(['u-ab642','niwa_update_NIWA-UKCA_refC1_2001-2010_zm','niwa_update_NIWA-UKCA_refC1_2001-2010','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010_zm','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010'])
 fnames = np.array(['ab642'])
+titles=['control','UKCA refC1 zm','UKCA refC1','anqdg zm','anqdg']
 
 varnames = np.array([\
 'air_temperature',\
@@ -26,9 +27,8 @@ for i in range(0,len(dirnames)):
 
     plt.subplot(3,2,i + 1 + (i > 0))
     qplt.contourf(plotthis, 20, cmap='RdBu_r', vmin=vmin, vmax=vmax)
-    plt.title(dirnames[i])
+    plt.title(titles[i])
     plt.gca().coastlines()
-    plt.tight_layout()
 
 iplt.show()
 
