@@ -17,14 +17,18 @@ for i in range(0,len(dirnames)):
     if i == 0:
         cube_control = cube
         plotthis = cube
+        vmin = 250
+        vmax = 310
     else:
         plotthis = cube - cube_control
-         
-    if i > 0:
-        plt.subplot(2,2,i)
-        qplt.pcolormesh(plotthis, cmap='RdBu_r', vmin=-5, vmax=5)
-        plt.title(dirnames[i])
-        plt.gca().coastlines()
+        vmin = -5
+        vmax = 5
+
+    plt.subplot(3,2,i + 1 + (i > 0))
+    qplt.contourf(plotthis, 20, cmap='RdBu_r', vmin=vmin, vmax=vmax)
+    plt.title(dirnames[i])
+    plt.gca().coastlines()
+    plt.tight_layout()
 
 iplt.show()
 
