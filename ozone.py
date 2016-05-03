@@ -22,7 +22,7 @@ for i in range(0,len(dirnames)):
          
     if i > 0:
         plt.subplot(2,2,i)
-        qplt.pcolormesh(plotthis, cmap='RdBu_r')
+        qplt.pcolormesh(plotthis, cmap='RdBu_r', vmin=-5, vmax=5)
         plt.title(dirnames[i])
         plt.gca().coastlines()
 
