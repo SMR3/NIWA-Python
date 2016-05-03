@@ -10,7 +10,7 @@ varnames = np.array([\
 
 for i in range(0,len(dirnames)):
 
-    fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[0]+'a.ps1981son'
+    fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[0]+'a.ps1982djf'
 
     cube_all = iris.load(fname, varnames[0])
     cube=cube_all[0] 
@@ -18,7 +18,7 @@ for i in range(0,len(dirnames)):
     if i == 0:
         cube_control = cube
         plotthis = cube
-        vmin = 250
+        vmin = 240
         vmax = 310
     else:
         plotthis = cube - cube_control
