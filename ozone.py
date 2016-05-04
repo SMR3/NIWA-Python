@@ -32,3 +32,14 @@ for i in range(0,len(dirnames)):
 
 iplt.show()
 
+# addtional bits to get at data values only
+coord_names = [coord.name() for coord in cube[0].coords()]
+print coord_names
+
+coord = cube[0].coord('longitude')
+print coord.points
+print coord.units
+print coord.standard_name
+
+print coord.points[3]
+
