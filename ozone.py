@@ -10,7 +10,7 @@ varnames = np.array([\
 
 for i in range(0,len(dirnames)):
 
-    fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[0]+'a.ps1982djf'
+    fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[0]+'a.ps1983jja'
 
     cube_all = iris.load(fname, varnames[0])
     cube=cube_all[0] 
