@@ -20,6 +20,8 @@ for i in range(0,len(dirnames)):
         plotthis = cube
         vmin = 240
         vmax = 310
+        lat=cube.coord('latitude').points
+        lon=cube.coord('longitude').points
     else:
         plotthis = cube - cube_control
         vmin = -5
