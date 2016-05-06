@@ -22,15 +22,24 @@ for i in range(0,len(dirnames)):
         vmax = 310
         lat=cube.coord('latitude').points
         lon=cube.coord('longitude').points
+        lonplot,latplot=np.meshgrid(lon,lat)
     else:
         plotthis = cube - cube_control
         vmin = -5
         vmax = 5
 
     plt.subplot(3,2,i + 1 + (i > 0))
+
+# 1 - Plot with Iris qplot
     qplt.pcolormesh(plotthis, cmap='RdBu_r', vmin=vmin, vmax=vmax)
-    plt.title(titles[i], size='small')
     plt.gca().coastlines()
+
+# 2 - Plot with standard Matplotlib 
+#    plt.pcolormesh(lonplot,latplot,plotthis.data, cmap='RdBu_r', vmin=vmin, vmax=vmax)
+#    plt.axis([0,360,-90,90])
+#    plt.colorbar()
+
+    plt.title(titles[i], size='small')
 
 iplt.show()
 
