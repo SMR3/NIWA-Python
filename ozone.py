@@ -2,7 +2,7 @@ fig = plt.figure(figsize=(10,10))
 
 dirnames = np.array(['dummy','u-ab642-10-years','niwa_update_NIWA-UKCA_refC1_2001-2010_zm','niwa_update_NIWA-UKCA_refC1_2001-2010','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010_zm','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010'])
 fnames = np.array(['ab642'])
-titles=['control','UKCA refC1 zm - control','UKCA refC1 - control','anqdg zm - control','anqdg - control']
+titles=['Met Office control','NIWA control','UKCA refC1 zm - control','UKCA refC1 - control','anqdg zm - control','anqdg - control']
 
 varnames = np.array([\
 'air_temperature',\
