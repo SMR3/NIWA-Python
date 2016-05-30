@@ -1,8 +1,8 @@
 fig = plt.figure(figsize=(10,10))
 
-dirnames = np.array(['dummy','u-ab642-10-years','niwa_update_NIWA-UKCA_refC1_2001-2010_zm','niwa_update_NIWA-UKCA_refC1_2001-2010','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010_zm','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010'])
+dirnames = np.array(['dummy','u-ab642','niwa_update_NIWA-UKCA_refC1_2001-2010_zm','niwa_update_NIWA-UKCA_refC1_2001-2010','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010_zm','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010'])
 fnames = np.array(['ab642'])
-titles=['MO ctrl - 1st 10 years','NIWA control','UKCA refC1 zm - control','UKCA refC1 - control','anqdg zm - control','anqdg - control']
+titles=['MO ctrl - 1st 10 years','NIWA control - 1st 10 years','UKCA refC1 zm - control','UKCA refC1 - control','anqdg zm - control','anqdg - control']
 
 varnames = np.array([\
 'air_temperature',\
@@ -11,9 +11,11 @@ varnames = np.array([\
 for i in range(0,len(dirnames)):
 
     if i == 0:
-        fname = '/hpcf/data/williamsjh/MASS/ab642a.px19911201.pp'
+        fname = '/hpcf/data/williamsjh/MASS/ab642a.px20011201.pp'
+    else if 1 == 1: 
+        fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[0]+'a.px19911201'
     else: 
-        fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[0]+'a.py19901201'
+        fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[0]+'a.px20011201'
 
     cube_all = iris.load(fname, varnames[0])
     cube=cube_all[0] 
