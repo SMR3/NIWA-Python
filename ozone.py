@@ -8,44 +8,46 @@ varnames = np.array([\
 'air_temperature',\
 ])
 
-for i in range(0,len(dirnames)):
+for j in range(0,len(varnames)):# loop over different variables
 
-    if i == 0:
-        fname = '/hpcf/data/williamsjh/MASS/ab642a.px20011201.pp'
-    elif 1 == 1: 
-        fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[0]+'a.px20011201'
-    else: 
-        fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[0]+'a.px20011201'
+    for i in range(0,len(dirnames)):# loop over different suites
 
-    cube_all = iris.load(fname, varnames[0])
-    cube=cube_all[0] 
-   
-    if i == 0:
-        cube_control = cube
-        plotthis = cube
-        vmin = 240
-        vmax = 310
-        lat=cube.coord('latitude').points
-        lon=cube.coord('longitude').points
-        lonplot,latplot=np.meshgrid(lon,lat)
-    else:
-        plotthis = cube - cube_control
-        vmin = -1
-        vmax = 1
+        if i == 0:
+            fname = '/hpcf/data/williamsjh/MASS/ab642a.px20011201.pp'
+        elif 1 == 1: 
+            fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[0]+'a.px20011201'
+        else: 
+            fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[0]+'a.px20011201'
 
-    plt.subplot(3,2,i + 1)
+        cube_all = iris.load(fname, varnames[0])
+        cube=cube_all[0] 
+       
+        if i == 0:
+            cube_control = cube
+            plotthis = cube
+            vmin = 240
+            vmax = 310
+            lat=cube.coord('latitude').points
+            lon=cube.coord('longitude').points
+            lonplot,latplot=np.meshgrid(lon,lat)
+        else:
+            plotthis = cube - cube_control
+            vmin = -1
+            vmax = 1
 
-# 1 - Plot with Iris qplot
-    qplt.pcolormesh(plotthis, cmap='RdBu_r', vmin=vmin, vmax=vmax)
-    plt.gca().coastlines()
+        plt.subplot(3,2,i + 1)
 
-# 2 - Plot with standard Matplotlib 
-#    plt.pcolormesh(lonplot,latplot,plotthis.data, cmap='RdBu_r', vmin=vmin, vmax=vmax)
-#    plt.axis([0,360,-90,90])
-#    plt.colorbar()
+    # 1 - Plot with Iris qplot
+        qplt.pcolormesh(plotthis, cmap='RdBu_r', vmin=vmin, vmax=vmax)
+        plt.gca().coastlines()
 
-    plt.title(titles[i], size='small')
-    plt.suptitle('Years 10 -20 or the simulations, 1991-2001')
+    # 2 - Plot with standard Matplotlib 
+    #    plt.pcolormesh(lonplot,latplot,plotthis.data, cmap='RdBu_r', vmin=vmin, vmax=vmax)
+    #    plt.axis([0,360,-90,90])
+    #    plt.colorbar()
+
+        plt.title(titles[i], size='small')
+        plt.suptitle('Years 10 -20 of the simulations, 1991-2001')
 
 iplt.show()
 
