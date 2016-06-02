@@ -1,7 +1,7 @@
 dirnames = np.array(['dummy','u-ab642','niwa_update_NIWA-UKCA_refC1_2001-2010_zm','niwa_update_NIWA-UKCA_refC1_2001-2010','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010_zm','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010'])
 fnames = np.array(['ab642'])
-titles=['MO ctrl - years 10-20','NIWA ctrol - MO ctrl','UKCA refC1 zm - NIWA ctrl','UKCA refC1 - NIWA ctrl','anqdg zm - NIWA ctrl','anqdg - NIWA ctrl']
-
+titles=['MO ctrl - years 10-20','NIWA ctrl - MO ctrl','UKCA refC1 zm - NIWA ctrl','UKCA refC1 - NIWA ctrl','anqdg zm - NIWA ctrl','anqdg - NIWA ctrl']
+figuretitles=np.array(['1.5m-T.pdf','P.pdf'])
 varnames = np.array([\
 'air_temperature',\
 'precipitation_flux',\
@@ -12,7 +12,7 @@ vmindiffs=np.array([-1,-1])
 vmaxs=np.array([310,16])
 vmaxdiffs=np.array([1,1])
 
-for j in range(1,len(varnames)):# loop over different variables
+for j in range(0,len(varnames)):# loop over different variables
 
     fig = plt.figure(figsize=(10,10))
   #  plt.figure()
@@ -64,8 +64,8 @@ for j in range(1,len(varnames)):# loop over different variables
         plt.title(titles[i], size='small')
         plt.suptitle('Years 10 -20 of the simulations, 1991-2001')
 
-plt.savefig('fig.pdf', format='pdf')
-iplt.show()
+    plt.savefig(figuretitles[j], format='pdf')
+    iplt.show()
 
 # addtional bits to get at data values only
 # coord_names = [coord.name() for coord in cube[0].coords()]
