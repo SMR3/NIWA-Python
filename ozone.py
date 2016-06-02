@@ -2,7 +2,7 @@ fig = plt.figure(figsize=(10,10))
 
 dirnames = np.array(['dummy','u-ab642','niwa_update_NIWA-UKCA_refC1_2001-2010_zm','niwa_update_NIWA-UKCA_refC1_2001-2010','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010_zm','niwa_update_NIWA-ozone-forcing-from-anqdg-2001-2010'])
 fnames = np.array(['ab642'])
-titles=['MO ctrl - 1st 10 years','NIWA control - 1st 10 years','UKCA refC1 zm - control','UKCA refC1 - control','anqdg zm - control','anqdg - control']
+titles=['MO ctrl - years 10-20','NIWA ctrol - MO ctrl','UKCA refC1 zm - NIWA ctrl','UKCA refC1 - NIWA ctrl','anqdg zm - NIWA ctrl','anqdg - NIWA ctrl']
 
 varnames = np.array([\
 'air_temperature',\
@@ -12,8 +12,8 @@ for i in range(0,len(dirnames)):
 
     if i == 0:
         fname = '/hpcf/data/williamsjh/MASS/ab642a.px20011201.pp'
-    else if 1 == 1: 
-        fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[0]+'a.px19911201'
+    elif 1 == 1: 
+        fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[0]+'a.px20011201'
     else: 
         fname = '/home/williamsjh/cylc-run/'+dirnames[i]+'/share/data/History_Data/'+fnames[0]+'a.px20011201'
 
@@ -45,17 +45,18 @@ for i in range(0,len(dirnames)):
 #    plt.colorbar()
 
     plt.title(titles[i], size='small')
+    plt.suptitle('Years 10 -20 or the simulations, 1991-2001')
 
 iplt.show()
 
 # addtional bits to get at data values only
-coord_names = [coord.name() for coord in cube[0].coords()]
-print coord_names
+# coord_names = [coord.name() for coord in cube[0].coords()]
+# print coord_names
 
-coord = cube[0].coord('longitude')
-print coord.points
-print coord.units
-print coord.standard_name
+# coord = cube[0].coord('longitude')
+# print coord.points
+# print coord.units
+# print coord.standard_name
 
-print coord.points[3]
+# print coord.points[3]
 
