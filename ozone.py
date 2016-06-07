@@ -7,6 +7,8 @@ varnames = np.array([\
 'precipitation_flux',\
 ])
 
+
+
 vmins=np.array([240,0])
 vmindiffs=np.array([-1,-1])
 vmaxs=np.array([310,16])
@@ -37,6 +39,7 @@ for j in range(0,len(varnames)):# loop over different variables
             cube.data = cube.data * 86400.
             if i == 0:
                 cmap = 'Blues'
+            obs=iris.load('/hpcf/data/williamsjh/obs/cmap/precip.mon.mean.nc')            
 
         if i == 0:
             cube_control = cube
@@ -65,7 +68,7 @@ for j in range(0,len(varnames)):# loop over different variables
         plt.suptitle('Years 10 -20 of the simulations, 1991-2001')
 
     plt.savefig(figuretitles[j], format='pdf')
-    iplt.show()
+#    iplt.show()
 
 # addtional bits to get at data values only
 # coord_names = [coord.name() for coord in cube[0].coords()]
